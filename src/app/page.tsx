@@ -1,65 +1,59 @@
-import Image from "next/image";
+import Link from 'next/link';
+import ServiceCard from '@/components/ServiceCard';
+import QrCode from '@/components/QrCode';
+import { services } from '@/config/services';
+
+const portalUrl = process.env.NEXT_PUBLIC_PORTAL_URL ?? '';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      {/* 히어로 */}
+      <div
+        className="relative overflow-hidden text-white text-center px-6 py-10"
+        style={{ background: 'linear-gradient(145deg, #0a5f96 0%, #0d7bbf 50%, #29a0e0 100%)' }}
+      >
+        <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-white/[0.06]" />
+        <div className="absolute -bottom-14 -left-8 w-56 h-56 rounded-full bg-white/[0.04]" />
+        <span className="text-5xl block mb-3 relative z-10">📚</span>
+        <h1 className="text-2xl font-extrabold tracking-tight mb-2 relative z-10">해밀도서관</h1>
+        <p className="text-sm opacity-85 leading-relaxed relative z-10">
+          도서관의 모든 서비스를<br />한 곳에서 이용하세요
+        </p>
+      </div>
+
+      {/* 서비스 카드 */}
+      <p className="text-xs font-bold text-[#7aafcf] tracking-widest uppercase px-5 pt-6 pb-3">
+        서비스 바로가기
+      </p>
+      <div className="grid grid-cols-2 gap-3 px-4 pb-4">
+        {services.map((s) => (
+          <ServiceCard key={s.id} service={s} />
+        ))}
+      </div>
+
+      {/* QR 섹션 */}
+      <p className="text-xs font-bold text-[#7aafcf] tracking-widest uppercase px-5 pt-2 pb-3">
+        QR 코드
+      </p>
+      <div className="mx-4 mb-4 bg-white rounded-[18px] p-5 shadow-sm">
+        <h2 className="text-sm font-bold text-[#1a2a3a] mb-1">핸드폰으로 바로 접속</h2>
+        <p className="text-xs text-[#90a8be] mb-4">QR코드를 스캔하면 바로 이동해요</p>
+        <div className="flex justify-center mb-4">
+          <QrCode url={portalUrl} size={140} />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        <Link
+          href="/print"
+          className="block w-full py-3 bg-[#e8f4fb] text-[#0d7bbf] text-center text-sm font-bold rounded-xl"
+        >
+          🖨️ 인쇄용 QR 페이지 보기
+        </Link>
+      </div>
+
+      {/* 푸터 */}
+      <footer className="text-center text-xs text-[#a0bece] border-t border-[#ddeef7] py-6 mt-2">
+        해밀도서관 · 문의: 도서관 담당 선생님
+      </footer>
+    </main>
   );
 }
