@@ -50,6 +50,15 @@ export default function Home() {
         </Link>
       </div>
 
+      {/* 개인정보 안내 */}
+      <div className="mx-4 mb-4 flex items-start gap-2.5 bg-[#f0f7ff] border border-[#c8dff0] rounded-2xl px-4 py-3.5">
+        <span className="text-base mt-0.5">🔒</span>
+        <p className="text-xs text-[#4a7a9b] leading-relaxed">
+          본 서비스에서 수집되는 모든 개인정보는{' '}
+          <strong className="font-bold text-[#0d7bbf]">중리중학교 도서관 이용 개인정보처리방침</strong>에 의거하여 처리됩니다.
+        </p>
+      </div>
+
       {/* 푸터 */}
       <footer className="text-center text-xs text-[#a0bece] border-t border-[#ddeef7] py-6 mt-2">
         중리중학교 해밀도서관 · 문의: 도서관 담당 선생님
