@@ -55,7 +55,12 @@ export default function Home() {
         <span className="text-base mt-0.5">🔒</span>
         <p className="text-xs text-[#4a7a9b] leading-relaxed">
           본 서비스에서 수집되는 모든 개인정보는{' '}
-          <strong className="font-bold text-[#0d7bbf]">중리중학교 도서관 이용 개인정보처리방침</strong>에 의거하여 처리됩니다.
+          <a
+            href="https://jungri.dge.ms.kr/jungrim/iv/indvdlView/selectIndvdlView.do"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-[#0d7bbf] underline underline-offset-2"
+          >중리중학교 도서관 이용 개인정보처리방침</a>에 의거하여 처리됩니다.
         </p>
       </div>
 
