@@ -52,7 +52,7 @@ export default function Home() {
 
       {/* 푸터 */}
       <footer className="text-center text-xs text-[#a0bece] border-t border-[#ddeef7] py-6 mt-2">
-        해밀도서관 · 문의: 도서관 담당 선생님
+        중리중학교 해밀도서관 · 문의: 도서관 담당 선생님
       </footer>
     </main>
   );
