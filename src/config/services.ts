@@ -18,7 +18,7 @@ export const services: Service[] = [
     label: '도서관 이용 신청',
     description: '수업·방과후 시간 예약',
     emoji: '📅',
-    url: process.env.NEXT_PUBLIC_TIMETABLE_URL ?? '',
+    url: process.env.NEXT_PUBLIC_TIMETABLE_URL ?? 'https://librabook.vercel.app',
     status: 'active',
     color: 'sky',
   },
