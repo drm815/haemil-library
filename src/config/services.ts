@@ -27,7 +27,7 @@ export const services: Service[] = [
     label: '희망도서 신청',
     description: '읽고 싶은 책 신청하기',
     emoji: '📖',
-    url: process.env.NEXT_PUBLIC_LIBRARY_URL ?? 'https://lib-mid.vercel.app',
+    url: process.env.NEXT_PUBLIC_LIBRARY_URL ?? 'https://library-wish.vercel.app',
     status: 'active',
     color: 'teal',
   },
