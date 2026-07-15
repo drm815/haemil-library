@@ -1,0 +1,24 @@
+{
+  "name": "해밀도서관",
+  "short_name": "해밀도서관",
+  "description": "중리중학교 해밀도서관 서비스 포털",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d7bbf",
+  "theme_color": "#0d7bbf",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
